@@ -1,6 +1,6 @@
-import type { Product } from "./types/product";
+import type { Product } from "./types/Product";
 
-export function renderSearchResults(searchResultsArr: Product[]) {
+export function renderProucts(searchResultsArr: Product[]) {
   const productsContainer = document.getElementById(
     "productsContainer",
   ) as HTMLDivElement;

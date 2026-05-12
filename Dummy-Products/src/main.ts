@@ -1,6 +1,10 @@
-import { getCategoriesNames, searchProduct } from "./modules/api";
-import { renderSearchResults } from "./modules/renderSearchResults";
-import type { Product } from "./modules/types/product";
+import {
+  getCategoriesNames,
+  getCategoryProducts,
+  searchProduct,
+} from "./modules/api";
+import { renderProucts } from "./modules/renderProucts";
+import type { Product } from "./modules/types/Product";
 import "./style.css";
 
 // ELEMENTS
@@ -46,7 +50,6 @@ searchForm.addEventListener("submit", async (event) => {
 
   try {
     const products: Product[] = await searchProduct(searchTerm);
-    console.log("prodcuts i main: ", products);
 
     if (products.length === 0) {
       productsContainer.innerHTML = "";
@@ -54,7 +57,7 @@ searchForm.addEventListener("submit", async (event) => {
       pElement.textContent = `No results found, please provide another searchterm`;
       productsContainer?.append(pElement);
     } else {
-      renderSearchResults(products);
+      renderProucts(products);
     }
   } catch (error) {
     console.error(error);
@@ -65,5 +68,25 @@ searchForm.addEventListener("submit", async (event) => {
   }
 });
 
-// 2: Add eventlistener to view selected category
-categorySelector.addEventListener("change", async () => {});
+categorySelector.addEventListener("change", async (event) => {
+  const selectedCategory = (event.target as HTMLSelectElement).value;
+
+  try {
+    const products: Product[] = await getCategoryProducts(selectedCategory);
+
+    if (products.length === 0) {
+      productsContainer.innerHTML = "";
+      const pElement = document.createElement("p");
+      pElement.textContent = `No results found, please provide another searchterm`;
+      productsContainer?.append(pElement);
+    } else {
+      renderProucts(products);
+    }
+  } catch (error) {
+    console.error(error);
+    productsContainer.innerHTML = "";
+    const pElement = document.createElement("p");
+    pElement.textContent = `${error}`;
+    productsContainer?.append(pElement);
+  }
+});
