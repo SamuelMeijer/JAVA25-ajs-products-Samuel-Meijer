@@ -4,10 +4,26 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dummy-products</title>
+    <title>Dummy Products</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header>
+        <h1>Welcome!</h1>
+      </header>
+      <main>
+        <section id="center">
+          <h2>Chose which products to view</h2>
+
+          <form role="search" id="searchForm">
+            <label for="searchterm">Search a product</label>
+            <input type="search" placeholder="Search..." aria-label="search" name="searchterm"/>
+            <input type="submit" value="Search">
+          </form>
+
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
