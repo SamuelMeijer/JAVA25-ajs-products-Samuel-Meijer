@@ -1,4 +1,4 @@
-import type { Product } from "./types/Product";
+import type { Product } from "./types/Product.ts";
 
 export async function searchProduct(searchTerm: string): Promise<Product[]> {
   const url: string = `https://dummyjson.com/products/search?q=${searchTerm}`;

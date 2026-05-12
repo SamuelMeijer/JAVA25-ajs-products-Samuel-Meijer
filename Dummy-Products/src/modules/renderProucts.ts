@@ -1,4 +1,4 @@
-import type { Product } from "./types/Product";
+import type { Product } from "./types/Product.ts";
 
 export function renderProucts(searchResultsArr: Product[]) {
   const productsContainer = document.getElementById(

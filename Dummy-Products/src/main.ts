@@ -4,9 +4,9 @@ import {
   getCategoriesNames,
   getCategoryProducts,
   searchProduct,
-} from "./modules/api";
-import { renderProucts } from "./modules/renderProucts";
-import type { Product } from "./modules/types/Product";
+} from "./modules/api.ts";
+import { renderProucts } from "./modules/renderProucts.ts";
+import type { Product } from "./modules/types/Product.ts";
 import "./style.css";
 
 // ELEMENTS
