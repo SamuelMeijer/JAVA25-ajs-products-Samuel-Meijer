@@ -1,6 +1,5 @@
 // IMPORTS
 import { animate, stagger, splitText } from "animejs";
-
 import {
   getCategoriesNames,
   getCategoryProducts,
@@ -19,8 +18,7 @@ const categorySelector = document.getElementById(
   "categorySelector",
 ) as HTMLSelectElement;
 
-// TODO: Add error-msg as seperate function?
-// TODO: Add animation or some other library.
+// ANIMATION
 const { chars } = splitText("#mainTitle", { words: false, chars: true });
 
 animate(chars, {
