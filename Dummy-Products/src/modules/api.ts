@@ -27,3 +27,26 @@ export async function searchProduct(searchTerm: string): Promise<Product[]> {
       );
   }
 }
+
+export async function getCategoriesNames(): Promise<
+  { path: string; name: string }[]
+> {
+  const url: string = "https://dummyjson.com/products/categories";
+
+  const resp = await fetch(url);
+
+  if (resp.ok) {
+    const data: { slug: string; name: string; url: string }[] =
+      await resp.json();
+
+    const categories: { path: string; name: string }[] = data.map(
+      ({ slug, name }) => ({ path: slug, name }),
+    );
+
+    return categories;
+  } else {
+    throw new Error(
+      "Something went wrong when fetching categories from the server, please try again later",
+    );
+  }
+}
