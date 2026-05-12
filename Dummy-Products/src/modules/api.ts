@@ -1,4 +1,5 @@
 import { type Product } from "./types/Product";
+import { __Product_type_marker } from "./types/Product";
 
 export async function searchProduct(searchTerm: string): Promise<Product[]> {
   const url: string = `https://dummyjson.com/products/search?q=${searchTerm}`;

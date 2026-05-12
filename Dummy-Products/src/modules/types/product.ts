@@ -5,3 +5,5 @@ export type Product = {
   rating: number;
   availabilityStatus: string;
 };
+
+export const __Product_type_marker = true;

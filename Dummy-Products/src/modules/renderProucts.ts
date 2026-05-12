@@ -1,4 +1,5 @@
 import { type Product } from "./types/Product";
+import { __Product_type_marker } from "./types/Product";
 
 export function renderProucts(searchResultsArr: Product[]) {
   const productsContainer = document.getElementById(

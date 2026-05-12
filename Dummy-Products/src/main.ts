@@ -7,6 +7,7 @@ import {
 } from "./modules/api";
 import { renderProucts } from "./modules/renderProucts";
 import { type Product } from "./modules/types/Product";
+import { __Product_type_marker } from "./modules/types/Product";
 import "./style.css";
 
 // ELEMENTS
