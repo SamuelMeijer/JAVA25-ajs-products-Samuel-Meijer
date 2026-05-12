@@ -304,3 +304,7 @@ code {
 .productCard img {
   max-width: 200px;
 }
+
+header {
+    padding-top:4rem;
+}

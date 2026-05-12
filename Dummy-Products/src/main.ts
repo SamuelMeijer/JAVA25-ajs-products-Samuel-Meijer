@@ -1,3 +1,6 @@
+// IMPORTS
+import { animate, stagger, splitText } from "animejs";
+
 import {
   getCategoriesNames,
   getCategoryProducts,
@@ -18,6 +21,24 @@ const categorySelector = document.getElementById(
 
 // TODO: Add error-msg as seperate function?
 // TODO: Add animation or some other library.
+const { chars } = splitText("#mainTitle", { words: false, chars: true });
+
+animate(chars, {
+  // Keyframes
+  y: [
+    { to: "-2.75rem", ease: "outExpo", duration: 600 },
+    { to: 0, ease: "outBounce", duration: 800, delay: 100 },
+  ],
+  // Parameters
+  rotate: {
+    from: "-1turn",
+    delay: 0,
+  },
+  delay: stagger(50),
+  ease: "inOutCirc",
+  loopDelay: 1000,
+  loop: false,
+});
 
 // Fetching product categories and adding to drop-down
 async function fillCategories() {
