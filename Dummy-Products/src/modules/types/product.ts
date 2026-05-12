@@ -1,6 +1,6 @@
 export type Product = {
     title: string,
-    imgPath: string,
+    images: string[],
     price: number,
     rating: number,
     availabilityStatus: string,
