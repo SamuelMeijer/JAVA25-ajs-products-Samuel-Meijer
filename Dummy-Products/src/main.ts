@@ -6,8 +6,8 @@ import {
   searchProduct,
 } from "./modules/api";
 import { renderProucts } from "./modules/renderProucts";
-import { type Product } from "./modules/types/Product";
-import { __Product_type_marker } from "./modules/types/Product";
+import { type Product } from "./modules/types/product";
+import { __Product_type_marker } from "./modules/types/product";
 import "./style.css";
 
 // ELEMENTS
